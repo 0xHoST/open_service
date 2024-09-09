@@ -19,7 +19,7 @@ An open protocol leveraging smart contracts for transparent service offerings wi
 1.Service Module
 
 - Enables service offerers to register their services through the Service Provider Module by minting a soulbound token provided by the module.
-  - During this process, the system verifies the service offerer against the Policy Registry Module before minting the soulbound token.
+  - During this process, the protocol verifies the service offerer against the Policy Registry Module before minting the soulbound token.
   - If the policy validation fails, the service registration will be rejected.
 
 - Allows users to book or make appointments (e.g., calling a driver) by minting a fractional, transferable service token (NFT) derived from the service offerer's soulbound token.
@@ -52,7 +52,7 @@ An open protocol leveraging smart contracts for transparent service offerings wi
 
 - When a user raises a dispute, the protocol identifies the relevant service and fetches the appropriate Dispute Resolver Module from the Service Provider Module.
 - The protocol creates a dispute contract, adds dispute resolver addresses, and resolver would need processes the dispute anad mark as resolved.
-  - Once resolved, the system calls the Service Module to complete the service.
+  - Once resolved, the protocol calls the Service Module to complete the service.
 
 6.Track Module
 
