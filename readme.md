@@ -16,7 +16,7 @@ An open protocol leveraging smart contracts for transparent service offerings wi
 
 ## Modules
 
-1.Service Module
+### Service Module
 
 - Enables service offerers to register their services through the Service Provider Module by minting a soulbound token provided by the module.
   - During this process, the protocol verifies the service offerer against the Policy Registry Module before minting the soulbound token.
@@ -29,7 +29,7 @@ An open protocol leveraging smart contracts for transparent service offerings wi
   - Upon completion, the contract marks the user's fractional service token as pending payment until the completion is confirmed.
   - The token is then transferred to the Track Module for record-keeping.
 
-2.Policy Registry Module
+### Policy Registry Module
 
 - Each country will have its own policy contract that defines service validation methods. These contracts must be registered within the Policy Registry Module.
 - Allows country-specific governance to register their policy contract for validation checks.
@@ -37,24 +37,24 @@ An open protocol leveraging smart contracts for transparent service offerings wi
   - Calls the country’s policy contract to execute policy checks.
     - Assume service offerer already register their wallet information
 
-3.Fee Distribution Module
+### Fee Distribution Module
 
 - Each service provider will have a specific fee distribution contract tied to the service type they offer.
 - The Service Module will call this Fee Distribution Module to distribute fees among the relevant actors once the service is marked complete.
 
-4.Service Provider Module
+### Service Provider Module
 
 - Service providers register their service provider contracts within this module.
 - Each service provider can link multiple fee distribution contracts to their service provider contract.
   - These contracts are called when invoked by the Service Module to manage payments.
 
-5.Dispute Resolver Module
+### Dispute Resolver Module
 
 - When a user raises a dispute, the protocol identifies the relevant service and fetches the appropriate Dispute Resolver Module from the Service Provider Module.
 - The protocol creates a dispute contract, adds dispute resolver addresses, and resolver would need processes the dispute anad mark as resolved.
   - Once resolved, the protocol calls the Service Module to complete the service.
 
-6.Track Module
+### Track Module
 
 - Provides open data for governance, service providers, or users to track how many services have been completed by a specific wallet.
 
